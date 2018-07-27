@@ -16,7 +16,7 @@ public class ValidadorCPF extends BaseValidador implements IValidadorCPF{
 	@Override
 	public boolean validaCPF(String cpf) {
 		//Retira a mascara caso o CPF tenha
-		cpf = cpf.replace(".", "").replace("-", "").trim();
+		cpf = cpf.replaceAll("[^0-9]", "");
 		
 		//Impede que CPF que sejam compostos de numeros iguais não sejam validados
 		if(!validaTamanhoDigitos(cpf)) return false;
