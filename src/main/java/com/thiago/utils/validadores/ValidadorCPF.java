@@ -15,17 +15,16 @@ public class ValidadorCPF extends BaseValidador implements IValidadorCPF{
 	 */
 	@Override
 	public boolean validaCPF(String cpf) {
-		boolean retorno = true;
 		//Retira a mascara caso o CPF tenha
 		cpf = cpf.replace(".", "").replace("-", "").trim();
 		
 		//Impede que CPF que sejam compostos de numeros iguais não sejam validados
-		if(!validaTamanhoDigitos(cpf)) retorno = false;
+		if(!validaTamanhoDigitos(cpf)) return false;
 		
 		//Valida se o numero do CPF é informado é valido
-		if(!verificaDigitos(cpf)) retorno = false;
+		if(!verificaDigitos(cpf)) return false;
 		
-		return retorno;		
+		return true;		
 	}
 	
 	/**

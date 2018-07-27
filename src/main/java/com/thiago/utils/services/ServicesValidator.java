@@ -30,7 +30,7 @@ public class ServicesValidator {
 	}
 	
 	@GET
-	@Path("cnpj/{cnpj}")
+	@Path("cnpj/{cnpj : .+}")
 	@Produces("application/json")
 	public String validaCNPJ(@PathParam("cnpj") String cnpj) {
 		String resultado = "";

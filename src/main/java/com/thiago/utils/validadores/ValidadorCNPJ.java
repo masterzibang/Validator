@@ -7,17 +7,16 @@ public class ValidadorCNPJ extends BaseValidador implements IValidadorCNPJ {
 
 	@Override
 	public boolean validaCNPJ(String cnpj) {
-		boolean retorno = true;
 		//retira mascara do CNPJ
 		cnpj = cnpj.replace(".", "").replace("/", "").replace("-", "").trim();
 		
 		//valida o tamanho do cnpj
-		if(!validaTamanhoDigitos(cnpj)) retorno = false;
+		if(!validaTamanhoDigitos(cnpj)) return false;
 		
 		//valida se o cnpj informado é valido
-		if(!verificaDigitos(cnpj)) retorno = false;
+		if(!verificaDigitos(cnpj)) return false;
 		
-		return retorno;
+		return true;
 	}
 
 	@Override
