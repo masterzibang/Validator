@@ -1,1 +1,3 @@
 com\thiago\utils\services\ServicesValidator.class
+com\thiago\utils\validadores\interfaces\IValidadorCPF.class
+com\thiago\utils\validadores\ValidadorCPF.class
