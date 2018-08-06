@@ -1,8 +1,10 @@
+com\thiago\utils\validadores\ValidadorCartao.class
 com\thiago\utils\validadores\interfaces\IValidadorCPF.class
 com\thiago\utils\validadores\interfaces\IValidadorCNPJ.class
 com\thiago\utils\models\ReturnObject.class
 com\thiago\utils\services\ServicesValidator.class
 com\thiago\utils\validadores\interfaces\IBaseValidador.class
+com\thiago\utils\validadores\interfaces\IValidadorCartao.class
 com\thiago\utils\validadores\ValidadorCNPJ.class
 com\thiago\utils\validadores\BaseValidador.class
 com\thiago\utils\validadores\ValidadorCPF.class
