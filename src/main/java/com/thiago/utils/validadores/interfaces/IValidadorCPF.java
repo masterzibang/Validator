@@ -1,5 +1,7 @@
 package com.thiago.utils.validadores.interfaces;
 
+import com.thiago.utils.models.ReturnObject;
+
 public interface IValidadorCPF {
-	boolean validaCPF(String cpf);
+	ReturnObject validaCPF(String cpf);
 }

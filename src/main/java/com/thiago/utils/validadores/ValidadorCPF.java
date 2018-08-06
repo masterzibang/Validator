@@ -1,5 +1,6 @@
 package com.thiago.utils.validadores;
 
+import com.thiago.utils.models.ReturnObject;
 import com.thiago.utils.validadores.interfaces.IValidadorCPF;
 
 /**
@@ -14,17 +15,27 @@ public class ValidadorCPF extends BaseValidador implements IValidadorCPF{
 	 * @return retorna se um cpf é valido ou não
 	 */
 	@Override
-	public boolean validaCPF(String cpf) {
+	public ReturnObject validaCPF(String cpf) {
 		//Retira a mascara caso o CPF tenha
 		cpf = cpf.replaceAll("[^0-9]", "");
+		boolean isTrue = true;
+		ReturnObject retorno = new ReturnObject();
 		
 		//Impede que CPF que sejam compostos de numeros iguais não sejam validados
-		if(!validaTamanhoDigitos(cpf)) return false;
+		if(!validaTamanhoDigitos(cpf)) isTrue = false;
 		
 		//Valida se o numero do CPF é informado é valido
-		if(!verificaDigitos(cpf)) return false;
+		if(!verificaDigitos(cpf)) isTrue = false;
 		
-		return true;		
+		retorno.setData(cpf);
+		
+		if(isTrue) {
+			retorno.setMensagem("CPF válido");
+		}else {
+			retorno.setMensagem("CPF inválido");
+		}
+		
+		return retorno;		
 	}
 	
 	/**
